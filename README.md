@@ -1,2 +1,3 @@
 # Intro-to-FullStack-2024
-3? part workshop on fullstack, each part is in its own branch
+
+A 3? part workshop series on fullstack development. Each part will be in its own branch.
