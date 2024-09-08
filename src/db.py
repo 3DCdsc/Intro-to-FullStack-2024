@@ -1,7 +1,4 @@
-"""Setup sqlalchemy to use sqlite3 database.
-
-Referenced from <https://fastapi.tiangolo.com/tutorial/sql-databases>.
-"""
+"""Setup sqlalchemy to use sqlite3 database."""
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
@@ -10,12 +7,20 @@ SQLALCHEMY_DATABASE_URL = "sqlite:///./my_db.db"
 
 
 class Base(DeclarativeBase):
-    pass
+    """Base class for all data models.
+
+    In SQLAlchemy, besides being used to track all data models, it also has properties
+    that can customize SQLAlchemy's behavior. Most notably, the custom type mapping,
+    see: <https://docs.sqlalchemy.org/en/20/orm/declarative_tables.html#customizing-the-type-map>.
+    """
+
+    def __repr__(self):
+        """Allows User instances to be printed in a human-readable format."""
+        return f"{self.__class__.__name__}({', '.join(f'{k}={getattr(self, k)!r}' for k in self.__table__.c.keys())})"
 
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
-    echo=True,  # Print out all the sql commands used; not sure if useful for workshop?
     # connect_args={"check_same_thread": False},  # Only useful with FastAPI in part 2.
 )
 

@@ -1,6 +1,6 @@
 """Put exports here."""
 
 from .db import Base, Session
-from .models import User
+from .models import Destination, Transaction, User
 
-__all__ = ["Base", "Session", "User"]
+__all__ = ["Base", "Session", "User", "Destination", "Transaction"]
