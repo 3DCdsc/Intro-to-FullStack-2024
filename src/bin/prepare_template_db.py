@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 def main():
     from src import Base
 
-    engine = create_engine("sqlite:///src/example.db")
+    engine = create_engine("sqlite:///src/template.db")
 
     Session = sessionmaker(bind=engine)
 
