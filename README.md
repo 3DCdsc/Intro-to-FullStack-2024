@@ -23,3 +23,7 @@ pip install -r requirements.txt
 - We will be using SQLAlchemy 2.0. The library's API is quite different, but I think
   its better to avoid teaching outdated things and this provides value to those who
   may have used SQLAlchemy before.
+- Because of table structure, process of normalization. If you find it hard to normalize
+  that means structured documents probably better. Many-to-many needs association tables.
+- <https://pypi.org/project/SQLAlchemy-Utc/>
+- Diagram of what an operation should do shown side by side during workshop so they can implement it themselves.

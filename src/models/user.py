@@ -23,6 +23,7 @@ class User(Base):
 
     __tablename__ = "user"
 
+    # NOTE: Some of these values use `default`, this will become apparent later in the notebook.
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     when_created: Mapped[datetime] = mapped_column(default=func.now())
     username: Mapped[str] = mapped_column(unique=True, index=True)

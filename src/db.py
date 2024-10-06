@@ -15,7 +15,7 @@ class Base(DeclarativeBase):
     """
 
     def __repr__(self):
-        """Allows User instances to be printed in a human-readable format."""
+        """Allows instances to be printed in a human-readable format."""
         return f"{self.__class__.__name__}({', '.join(f'{k}={getattr(self, k)!r}' for k in self.__table__.c.keys())})"
 
 
